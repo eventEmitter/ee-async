@@ -1,0 +1,25 @@
+{
+      "name"                        : "ee-async"
+    , "description"                 : "package decription"
+    , "version"                     : "0.1.0"
+    , "homepage"                    : "https://github.com/eventEmitter/ee-async"
+    , "author"                      : "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
+    , "licence"                     : "mit"
+    , "repository": {
+          "url"                     : "https://github.com/eventEmitter/ee-async.git"
+        , "type"                    : "git"
+    }
+    , "engines": {
+        "node"                      : ">=v0.10.17"
+    }
+    , "bugs": {
+        "url"                       : "https://github.com/eventEmitter/ee-async/issues"
+    }
+    , "dependencies": {
+          "ee-types"                : "*"
+          , "ee-log"                : "*"
+          , "ee-error"              : "*"
+    }
+    , "devDependencies": {}
+    , "optionalDependencies": {}
+}
