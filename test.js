@@ -37,3 +37,13 @@
 		assert.ifError(err);
 		assert.deepEqual( results, expected.wait, "async.wait failed, variying output!" );
 	} );
+
+
+	async.chain("./test/1.txt"
+		, fs.readFile
+		, function( data, next ){ next( null, data.toString() ); }
+		, function( err, results ){
+			assert.ifError(err);
+			assert.deepEqual( results, "1", "async.chain failed, variying output!" );
+		} 
+	);
