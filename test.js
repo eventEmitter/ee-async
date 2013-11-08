@@ -5,11 +5,11 @@
 		, assert 		= require( "assert" )
 		, fs 			= require( "fs" );
 
-	var srt =function(a, b ){ return a.input > b.input ? 1 : -1; };
-
+	
 
 	var expected = {
-		each: JSON.parse( '[{"input":"./test/1.txt","result":["1",1]},{"input":"./test/2.txt","result":["2",1]}]' ).sort( srt )
+		  each: JSON.parse( '[["1",1],["2",1]]' )
+		, wait: JSON.parse( '[100,200,300]' )
 	};
 
 
@@ -18,9 +18,22 @@
 
 	async.each( [ "./test/1.txt", "./test/2.txt" ]
 		, fs.readFile
-		, function( data, next ){ next( data.toString(), data.length ); }
+		, function( data, next ){ next( null, data.toString(), data.length ); }
 		, function( err, results ){
 			assert.ifError(err);
-			assert.deepEqual( results.sort( srt ), expected.each, "async.each failed, variying output!" );
+			assert.deepEqual( results, expected.each, "async.each failed, variying output!" );
 		} 
 	);
+
+
+	var offset = 0, doDelay = function( complete ){
+		var delay = ++offset * 100;
+		setTimeout( function(){
+			complete( null, delay );
+		}, delay );
+	}
+
+	async.wait( doDelay, doDelay, doDelay, function( err, results ){
+		assert.ifError(err);
+		assert.deepEqual( results, expected.wait, "async.wait failed, variying output!" );
+	} );
