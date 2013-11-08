@@ -16,14 +16,20 @@
 	var async 		= require( "./" );
 
 
+
 	async.each( [ "./test/1.txt", "./test/2.txt" ]
 		, fs.readFile
-		, function( data, next ){ next( null, data.toString(), data.length ); }
+		, function( data, next ){ 
+			next( null, data.toString(), data.length ); 
+		}
 		, function( err, results ){
 			assert.ifError(err);
 			assert.deepEqual( results, expected.each, "async.each failed, variying output!" );
 		} 
 	);
+
+
+
 
 
 	var offset = 0, doDelay = function( complete ){
@@ -39,9 +45,14 @@
 	} );
 
 
+
+
+
 	async.chain("./test/1.txt"
 		, fs.readFile
-		, function( data, next ){ next( null, data.toString() ); }
+		, function( data, next ){ 
+			next( null, data.toString() ); 
+		}
 		, function( err, results ){
 			assert.ifError(err);
 			assert.deepEqual( results, "1", "async.chain failed, variying output!" );
