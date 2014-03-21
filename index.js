@@ -1,6 +1,6 @@
 
 
-	require( "ee-error" );
+	require('ee-error');
 
 
-	module.exports = require( "./lib/async" );
+	module.exports = require('./lib/async');
