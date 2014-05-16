@@ -63,3 +63,12 @@ pass input through a chain of functions
 	);
 
 
+wait for several callbacks
+
+
+	var waiter = async.waiter(function(){
+		// both load events were fired
+	});
+
+	someAsyncApi.on('load', waiter());
+	anotherApi.on('load', waiter());

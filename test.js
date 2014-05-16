@@ -60,9 +60,9 @@
 	);
 
 
-	var counter = new async.counter(function(){
+	var waiter = new async.waiter(function(){
 		
 	});
 
-	counter()();
-	counter()();
+	waiter()();
+	waiter()();
