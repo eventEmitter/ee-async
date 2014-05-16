@@ -58,3 +58,11 @@
 			assert.deepEqual( results, "1", "async.chain failed, variying output!" );
 		} 
 	);
+
+
+	var counter = new async.Counter(function(){
+		
+	});
+
+	counter.count()();
+	counter.count()();
