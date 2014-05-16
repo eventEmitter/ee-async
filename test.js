@@ -60,9 +60,9 @@
 	);
 
 
-	var counter = new async.Counter(function(){
+	var counter = new async.counter(function(){
 		
 	});
 
-	counter.count()();
-	counter.count()();
+	counter()();
+	counter()();
