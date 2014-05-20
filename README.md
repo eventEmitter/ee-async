@@ -66,7 +66,7 @@ pass input through a chain of functions
 wait for several callbacks
 
 
-	var waiter = async.waiter(function(){
+	var waiter = async.waiter(function(err) {
 		// both load events were fired
 	});
 
