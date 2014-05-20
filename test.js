@@ -61,7 +61,7 @@
 
 
 	var waiter = new async.waiter(function(){
-		
+		log(1);
 	});
 
 	waiter()();
