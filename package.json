@@ -1,7 +1,7 @@
 {
       "name"                        : "ee-async"
     , "description"                 : "simpler control flow for asynchronous operations"
-    , "version"                     : "0.2.10"
+    , "version"                     : "0.2.11"
     , "homepage"                    : "https://github.com/eventEmitter/ee-async"
     , "author"                      : "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
     , "licence"                     : "mit"
