@@ -21,10 +21,12 @@
           , "ee-class"              : "1.0.x"
           , "ee-error"              : "0.1.x"
     }
-    , "devDependencies": {}
+    , "devDependencies": {
+            "mocha"                 : "1.21.x"
+    }
     , "optionalDependencies": {}
     , "keywords"                    : ["asnc", "control-flow", "each", "chain", "wait"]
     , "scripts": {
-        "test"                      : "node test.js"
+        "test"                      : "./node_modules/.bin/mocha --reporter spec --check-leaks"
     }
 }
