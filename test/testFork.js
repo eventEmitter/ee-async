@@ -1,5 +1,6 @@
 var   assert    = require('assert')
-    , types     = require('ee-types');
+    , types     = require('ee-types')
+    , log       = require('ee-log');
 
 var async = require('..');
 
@@ -99,5 +100,26 @@ describe('Fork', function(){
             syncFunction(null, 100, fork());
         });
 
+        describe('with reduce set to true', function(){
+            var err2 = new Error('second');
+            it('should reduce to error occurrences', function(done){
+                var fork = async.fork(function(results, remainder){
+
+                    assert(remainder === null);
+                    assert.equal(2, results.length);
+
+                    assert.strictEqual(results[0].error, err);
+                    assert.strictEqual(results[1].error, err2);
+
+                    assert.equal(results[1].result, true);
+                    done();
+                }, true);
+
+
+                asyncFunction(10, err2, true, fork());
+                asyncFunction(5, err, null, fork());
+                syncFunction(null, 100, fork());
+            })
+        });
     });
 });
