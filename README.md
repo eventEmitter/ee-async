@@ -1,5 +1,7 @@
 # ee-async
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/eventEmitter/ee-async.svg)](https://greenkeeper.io/)
+
 simple control flow helpers
 
 ## installation

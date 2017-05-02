@@ -16,13 +16,13 @@
         "url"                       : "https://github.com/eventEmitter/ee-async/issues"
     }
     , "dependencies": {
-            "ee-types"              : "0.1.x"
-          , "ee-log"                : "0.2.x"
-          , "ee-class"              : "1.0.x"
+            "ee-types"              : "~2.1.2"
+          , "ee-log"                : "~2.0.2"
+          , "ee-class"              : "~1.4.0"
           , "ee-error"              : "0.1.x"
     }
     , "devDependencies": {
-            "mocha"                 : "1.21.x"
+            "mocha"                 : "~3.3.0"
     }
     , "optionalDependencies": {}
     , "keywords"                    : ["asnc", "control-flow", "each", "chain", "wait"]
